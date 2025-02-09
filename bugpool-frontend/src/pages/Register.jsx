@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../components/Navbar";
 
 const Register = () => {
   const [formData, setFormData] = useState({ username: "", email: "", password: "" });
@@ -73,6 +74,8 @@ const Register = () => {
   };
 
   return (
+    <>
+    <Navbar/>
     <div className="w-full max-w-sm p-6 bg-gray-900 border border-gray-700 rounded-lg shadow-md">
       <ToastContainer />
       <h2 className="text-2xl font-bold text-center text-green-500">Register</h2>
@@ -126,6 +129,8 @@ const Register = () => {
         Already have an account? <Link to="/login" className="text-blue-500">Login here</Link>
       </p>
     </div>
+    </>
+    
   );
 };
 

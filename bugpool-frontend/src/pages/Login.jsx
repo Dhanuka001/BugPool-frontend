@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"; // Use useNavigate for red
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Navbar from "../components/Navbar";
 
 
 const Login = () => {
@@ -54,7 +55,7 @@ const Login = () => {
 
 
       setTimeout(() => {
-        navigate("/home"); 
+        navigate("/feed"); 
       }, 3000);
 
     } catch (err) {
@@ -75,7 +76,8 @@ const Login = () => {
   };
 
   return (
-    
+    <>
+    <Navbar/>
     <div className="w-full max-w-sm p-6 bg-gray-900 border border-gray-700 rounded-lg shadow-md">
       <ToastContainer />
       <h2 className="text-2xl font-bold text-highlight text-center text-green-500">Login</h2>
@@ -119,6 +121,8 @@ const Login = () => {
         No account? <Link to="/register" className="text-blue-400">Register here</Link>
       </p>
     </div>
+    </>
+   
   );
 };
 

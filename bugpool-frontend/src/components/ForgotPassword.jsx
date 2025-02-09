@@ -2,11 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaArrowLeft } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setEmail(e.target.value);
@@ -41,8 +44,13 @@ const ForgotPassword = () => {
   };
 
   return (
-    <div className="w-full max-w-sm p-6 bg-gray-900 border border-gray-700 rounded-lg shadow-md">
+    <>
+    <Navbar/>
+     <button onClick={() => navigate(-1)}
+     className="absolute top-12 left-6 text-lg text-green-500 flex gap-2 items-center"><FaArrowLeft/>Go Back</button>
+     <div className="w-full max-w-sm p-6 bg-gray-900 border border-gray-700 rounded-lg shadow-md">
       <ToastContainer />
+     
       <h2 className="text-2xl font-bold text-center text-green-500">Forgot Password</h2>
       <form onSubmit={handleSubmit} className="mt-4">
         <input
@@ -62,6 +70,8 @@ const ForgotPassword = () => {
         </button>
       </form>
     </div>
+    </>
+    
   );
 };
 
