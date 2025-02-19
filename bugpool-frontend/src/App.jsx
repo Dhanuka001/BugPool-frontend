@@ -6,6 +6,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import ResetPassword from "./components/ResetPassword";
 import LandingPage from "./pages/LandingPage";
 import Navbar from "./components/Navbar";
+import ProfileSetup from "./components/profile/ProfileSetup";
 
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/feed" element={<Home />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/profile-setup" element={<ProfileSetup />} />
         </Routes>
       </div>
     </Router>
